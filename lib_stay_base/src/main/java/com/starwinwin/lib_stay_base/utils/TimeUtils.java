@@ -32,6 +32,76 @@ public class TimeUtils {
      */
     public static final int DAY = 86400000;
 
+    /**
+     * 英文简写如：2010
+     */
+    public static String FORMAT_Y = "yyyy";
+
+    /**
+     * 英文简写如：12:01
+     */
+    public static String FORMAT_HM = "HH:mm";
+
+    /**
+     * 英文简写如：1-12 12:01
+     */
+    public static String FORMAT_MDHM = "MM-dd HH:mm";
+
+    /**
+     * 英文简写（默认）如：2010-12-01
+     */
+    public static String FORMAT_YMD = "yyyy-MM-dd";
+
+    /**
+     * 英文全称 如：2010-12-01 23:15
+     */
+    public static String FORMAT_YMDHM = "yyyy-MM-dd HH:mm";
+
+    /**
+     * 英文全称 如：2010-12-01 23:15:06
+     */
+    public static String FORMAT_YMDHMS = "yyyy-MM-dd HH:mm:ss";
+
+    /**
+     * 精确到毫秒的完整时间 如：yyyy-MM-dd HH:mm:ss.S
+     */
+    public static String FORMAT_FULL = "yyyy-MM-dd HH:mm:ss.S";
+
+    /**
+     * 精确到毫秒的完整时间 如：yyyy-MM-dd HH:mm:ss.S
+     */
+    public static String FORMAT_FULL_SN = "yyyyMMddHHmmssS";
+
+    /**
+     * 中文简写 如：2010年12月01日
+     */
+    public static String FORMAT_YMD_CN = "yyyy年MM月dd日";
+
+    /**
+     * 中文简写 如：2010年12月01日 12时
+     */
+    public static String FORMAT_YMDH_CN = "yyyy年MM月dd日 HH时";
+
+    /**
+     * 中文简写 如：2010年12月01日 12时12分
+     */
+    public static String FORMAT_YMDHM_CN = "yyyy年MM月dd日 HH时mm分";
+
+    /**
+     * 中文全称 如：2010年12月01日 23时15分06秒
+     */
+    public static String FORMAT_YMDHMS_CN = "yyyy年MM月dd日  HH时mm分ss秒";
+
+    /**
+     * 精确到毫秒的完整中文时间
+     */
+    public static String FORMAT_FULL_CN = "yyyy年MM月dd日  HH时mm分ss秒SSS毫秒";
+
+    /**
+     * 默认格式 ：2010-12-01 23:15:06
+     */
+    private static final String DEFAULT_FORMAT = "yyyy-MM-dd HH:mm:ss";
+
     private TimeUtils() {
         throw new UnsupportedOperationException("u can't instantiate me...");
     }
@@ -193,7 +263,7 @@ public class TimeUtils {
      * </pre>
      * 注意SimpleDateFormat不是线程安全的
      */
-    public static final SimpleDateFormat DEFAULT_SDF = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
+    public static final SimpleDateFormat DEFAULT_SDF = new SimpleDateFormat(DEFAULT_FORMAT, Locale.getDefault());
 
 
     /**

@@ -48,3 +48,28 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile project(':lib_stay_base')
 }
+
+//tinpng压缩图片
+//apply plugin: 'tinyPIC'
+//dexcount统计方法数
+//apply plugin: 'com.getkeepsafe.dexcount'
+
+//tinyinfo {
+//    apiKey = 'NrAHpQTJHnUbP8PhmpahBIFJ5YPFduPB'
+//    //是否跳过此task
+//    skip = true
+//    //是否打印日志
+//    isShowLog = true
+//}
+
+//dexcount {
+//    format = "list"
+//    includeClasses = false
+//    includeFieldCount = true
+//    includeTotalMethodCount = false
+//    orderByMethodCount = false
+//    verbose = false
+//    maxTreeDepth = Integer.MAX_VALUE
+//    teamCityIntegration = false
+//    enableForInstantRun = false
+//}

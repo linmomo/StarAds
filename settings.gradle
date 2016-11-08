@@ -1,1 +1,1 @@
-include ':app', ':lib_dialog', ':lib_ptr', ':lib_stay_base'
+include ':app', ':lib_dialog', ':lib_ptr', ':lib_stay_base', ':lib_data', ':lib_gallery'

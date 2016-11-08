@@ -8,7 +8,7 @@ import java.io.File;
 import java.math.BigDecimal;
 
 /**
- * 缓存处理器
+ * 清除缓存
  */
 public class DataCleanManager {
 

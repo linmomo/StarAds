@@ -4,7 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/StarAds.iml" filepath="$PROJECT_DIR$/StarAds.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib_data/lib_data.iml" filepath="$PROJECT_DIR$/lib_data/lib_data.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib_dialog/lib_dialog.iml" filepath="$PROJECT_DIR$/lib_dialog/lib_dialog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib_gallery/lib_gallery.iml" filepath="$PROJECT_DIR$/lib_gallery/lib_gallery.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib_ptr/lib_ptr.iml" filepath="$PROJECT_DIR$/lib_ptr/lib_ptr.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib_stay_base/lib_stay_base.iml" filepath="$PROJECT_DIR$/lib_stay_base/lib_stay_base.iml" />
     </modules>

@@ -9,7 +9,9 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/lib_data" />
             <option value="$PROJECT_DIR$/lib_dialog" />
+            <option value="$PROJECT_DIR$/lib_gallery" />
             <option value="$PROJECT_DIR$/lib_ptr" />
             <option value="$PROJECT_DIR$/lib_stay_base" />
           </set>
