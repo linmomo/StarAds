@@ -1,5 +1,10 @@
 package com.starwinwin.lib_stay_base.utils;
 
+import android.content.Context;
+import com.starwinwin.lib_stay_base.R;
+import in.srain.cube.views.ptr.PtrFrameLayout;
+import in.srain.cube.views.ptr.header.MaterialHeader;
+
 /**
  * 常用自定义工具类
  */
@@ -21,6 +26,30 @@ public class Util {
         }
         lastClickTime = time;
         return false;
+    }
+
+    public static void setPtr(Context context, PtrFrameLayout ptr) {
+
+        // header
+        final MaterialHeader header = new MaterialHeader(context);
+        int[] colors = context.getResources().getIntArray(R.array.google_colors);
+        header.setColorSchemeColors(colors);
+        header.setLayoutParams(new PtrFrameLayout.LayoutParams(-1, -2));
+        header.setPadding(0, SizeUtils.dp2px(context, 15), 0, SizeUtils.dp2px(context, 10));
+        header.setPtrFrameLayout(ptr);
+
+        //阻尼系数:默认: 1.7f，越大，感觉下拉时越吃力
+        ptr.setResistance(1.7f);
+        //触发刷新时移动的位置比例:默认，1.2f，移动达到头部高度1.2倍时可触发刷新操作
+        ptr.setRatioOfHeaderHeightToRefresh(1.2f);
+        //回弹延时：默认 200ms，回弹到刷新高度所用时间
+        ptr.setDurationToClose(200);
+        //头部回弹时间:默认1000ms
+        ptr.setDurationToCloseHeader(1000);
+        //下拉刷新 / 释放刷新:默认为释放刷新
+        ptr.setPullToRefresh(false);
+        //刷新是保持头部:默认值 true.
+        ptr.setKeepHeaderWhenRefresh(true);
     }
 
     /**

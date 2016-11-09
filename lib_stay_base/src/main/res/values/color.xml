@@ -1,23 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="colorPrimary">#d01716</color>
-    <color name="colorPrimaryDark">#dd191d</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">@color/red700</color>
+    <color name="colorPrimaryDark">@color/red600</color>
+    <color name="colorAccent">@color/pinka200</color>
 
+    <color name="default_loading_bg">@color/grey300</color>
+    <array name="default_loading_fg">
+        <item>@color/red500</item>
+        <item>@color/blue500</item>
+        <item>@color/yellow500</item>
+        <item>@color/green500</item>
+    </array>
+
+    <!--基础色-->
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
 
-    <color name="g_default_loading_bg">#e0e0e0</color>
-
-    <array name="g_default_loading_fg">
-        <item>#00bcd4</item>
-        <item>#9c27b0</item>
-        <item>#5677fc</item>
-        <item>#ff9800</item>
-        <item>#e91e63</item>
-    </array>
-
+    <!--透明度-->
+    <!--100% FF-->
+    <!--95%	F2-->
+    <!--90%	E6-->
+    <!--85%	D9-->
+    <!--80%	CC-->
+    <!--75%	BF-->
+    <!--70%	B3-->
+    <!--65%	A6-->
+    <!--60%	99-->
+    <!--55%	8C-->
+    <!--50%	80-->
+    <!--45%	73-->
+    <!--40%	66-->
+    <!--35%	59-->
+    <!--30%	4D-->
+    <!--25%	40-->
+    <!--20%	33-->
+    <!--15%	26-->
+    <!--10%	1A-->
+    <!--5%	0D-->
+    <!--0%	00-->
     <!-- Material Design 色板,具体颜色板查看以下地址 -->
     <!-- https://material.google.com/style/color.html#color-color-palette -->
     <!--红-->

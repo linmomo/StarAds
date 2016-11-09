@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--标题栏样式-->
-    <style name="TitleBar">
-        <item name="android:orientation">horizontal</item>
-        <item name="android:background">@color/colorPrimary</item>
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:gravity">center_vertical</item>
-        <item name="android:layout_height">?attr/actionBarSize</item>
-    </style>
 
-    <!--标题栏字体样式-->
-    <style name="TitleBarText">
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">12sp</item>
-        <item name="android:gravity">center</item>
-    </style>
-
+    <!--AppTheme Star-->
     <!--基本主题样式-->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
@@ -32,6 +18,26 @@
         <item name="android:activityCloseEnterAnimation">@anim/close_enter_fade_forward</item>
         <item name="android:activityCloseExitAnimation">@anim/close_exit_slide_out_right</item>
     </style>
+    <!--AppTheme end-->
+
+
+
+    <!--WidgetTheme star-->
+    <!--标题栏样式-->
+    <style name="TitleBar">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+    </style>
+
+    <!--标题栏字体样式-->
+    <style name="TitleBarText">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:gravity">center</item>
+    </style>
 
     <!--区域分割线(水平)-->
     <style name="section_item_divider">
@@ -43,28 +49,48 @@
     <!--区域分割线(竖直)-->
     <style name="section_item_divider_vertical">
         <item name="android:background">@color/black</item>
-        <item name="android:layout_width">0.0px</item>
+        <item name="android:layout_width">1.0px</item>
         <item name="android:layout_height">fill_parent</item>
     </style>
 
+    <!--Loading默认样式-->
     <style name="Genius.Widget.Loading" parent="">
         <item name="gBackgroundLineSize">@dimen/g_loading_lineSize</item>
         <item name="gForegroundLineSize">@dimen/g_loading_lineSize</item>
 
-        <item name="gBackgroundColor">@color/g_default_loading_bg</item>
-        <item name="gForegroundColor">@array/g_default_loading_fg</item>
+        <item name="gBackgroundColor">@color/default_loading_bg</item>
+        <item name="gForegroundColor">@array/default_loading_fg</item>
 
         <item name="gLineStyle">circle</item>
         <item name="gAutoRun">true</item>
     </style>
+    <!--WidgetTheme end-->
 
-    <style name="loading_progress" parent="@android:style/Theme.Dialog">
-        <item name="android:windowFrame">@null</item>
-        <item name="android:windowIsFloating">true</item>
-        <item name="android:windowContentOverlay">@null</item>
-        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
-        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+
+
+    <!--DialogTheme star-->
+    <!--自定义dialog背景全透明无边框theme -->
+    <style name="WaitDialog" parent="android:style/Theme.Dialog">
+        <!--背景颜色及和透明程度-->
         <item name="android:windowBackground">@android:color/transparent</item>
+        <!--是否去除标题 -->
         <item name="android:windowNoTitle">true</item>
+        <!--是否去除边框-->
+        <item name="android:windowFrame">@null</item>
+        <!--是否浮现在activity之上-->
+        <item name="android:windowIsFloating">true</item>
+        <!--是否模糊-->
+        <item name="android:backgroundDimEnabled">false</item>
     </style>
+
+    <!--    <style name="loading_progress" parent="@android:style/Theme.Dialog">
+            <item name="android:windowFrame">@null</item>
+            <item name="android:windowIsFloating">true</item>
+            <item name="android:windowContentOverlay">@null</item>
+            <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+            <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+            <item name="android:windowBackground">@android:color/transparent</item>
+            <item name="android:windowNoTitle">true</item>
+        </style>-->
+    <!--DialogTheme end-->
 </resources>

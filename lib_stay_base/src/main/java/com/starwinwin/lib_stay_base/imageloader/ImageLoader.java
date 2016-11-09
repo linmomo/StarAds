@@ -22,4 +22,6 @@ public interface ImageLoader {
     void loadRoundImage(ImageView view, String imageUrl);
 
     void loadBitmap(Context context, Object url, SimpleTarget<Bitmap> listener);
+
+    void cleanAll(Context context);
 }

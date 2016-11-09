@@ -17,6 +17,7 @@
 package cn.finalteam.galleryfinal;
 
 import android.app.Activity;
+import android.content.Context;
 import android.graphics.drawable.Drawable;
 
 import java.io.Serializable;
@@ -28,7 +29,8 @@ import cn.finalteam.galleryfinal.widget.GFImageView;
  * Author:pengjianbo
  * Date:15/10/10 下午5:27
  */
-public interface ImageLoader extends Serializable{
+public interface ImageLoader extends Serializable {
     void displayImage(Activity activity, String path, GFImageView imageView, Drawable defaultDrawable, int width, int height);
-    void clearMemoryCache();
+
+    void clearMemoryCache(Context context);
 }

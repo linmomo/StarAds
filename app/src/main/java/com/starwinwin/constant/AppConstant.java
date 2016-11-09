@@ -15,5 +15,5 @@ public class AppConstant {
     //视频
     public static final String DIR_VIDEO = APPDIR + "video/";
     // SD卡中的临时文件夹路径
-    public static final String TEMP_PATH = APPDIR + "temp";
+    public static final String DIR_TEMP = APPDIR + "temp";
 }

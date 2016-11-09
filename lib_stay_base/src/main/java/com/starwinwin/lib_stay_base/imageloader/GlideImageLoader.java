@@ -27,7 +27,7 @@ import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
  */
 public class GlideImageLoader implements ImageLoader {
     //默认配置
-    public static GlideImageLoadConfig defConfig = new GlideImageLoadConfig.Builder().build();
+    public GlideImageLoadConfig defConfig = new GlideImageLoadConfig.Builder().build();
 
     @Override
     public void loadUrlImage(ImageView view, String imageUrl) {
@@ -89,7 +89,7 @@ public class GlideImageLoader implements ImageLoader {
      * @param config
      * @param listener
      */
-    private static void load(Context context, ImageView view, Object objUrl, GlideImageLoadConfig config, final RequestListener listener) {
+    private void load(Context context, ImageView view, Object objUrl, GlideImageLoadConfig config, final RequestListener listener) {
         if (null == objUrl) {
             throw new IllegalArgumentException("资源地址为null");
         } else if (null == config) {
@@ -177,7 +177,7 @@ public class GlideImageLoader implements ImageLoader {
         }
     }
 
-    private static void setTargetView(GenericRequestBuilder request, GlideImageLoadConfig config, ImageView view) {
+    private void setTargetView(GenericRequestBuilder request, GlideImageLoadConfig config, ImageView view) {
         //set targetView
         if (null != config.getSimpleTarget()) {
             request.into(config.getSimpleTarget());
@@ -214,14 +214,14 @@ public class GlideImageLoader implements ImageLoader {
     /**
      * 取消所有正在下载或等待下载的任务。
      */
-    public static void cancelAllTasks(Context context) {
+    public void cancelAllTasks(Context context) {
         Glide.with(context).pauseRequests();
     }
 
     /**
      * 恢复所有任务
      */
-    public static void resumeAllTasks(Context context) {
+    public void resumeAllTasks(Context context) {
         Glide.with(context).resumeRequests();
     }
 
@@ -230,7 +230,7 @@ public class GlideImageLoader implements ImageLoader {
      *
      * @param context
      */
-    public static void clearDiskCache(final Context context) {
+    public void clearDiskCache(final Context context) {
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -244,7 +244,8 @@ public class GlideImageLoader implements ImageLoader {
      *
      * @param context
      */
-    public static void cleanAll(Context context) {
+    @Override
+    public void cleanAll(Context context) {
         clearDiskCache(context);
         Glide.get(context).clearMemory();
     }
@@ -283,7 +284,7 @@ public class GlideImageLoader implements ImageLoader {
 //            Glide.get(context).clearMemory();
 //        }
 //    }
-    public static void clearTarget(View view) {
+    public void clearTarget(View view) {
         Glide.clear(view);
     }
 

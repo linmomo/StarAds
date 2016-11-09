@@ -1,4 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="sexs">
+        <item>不限</item>
+        <item>男</item>
+        <item>女</item>
+    </string-array>
+    <string-array name="constellations">
+        <item>不限</item>
+        <item>白羊座</item>
+        <item>金牛座</item>
+        <item>双子座</item>
+        <item>巨蟹座</item>
+        <item>狮子座</item>
+        <item>处女座</item>
+        <item>天秤座</item>
+        <item>天蝎座</item>
+        <item>射手座</item>
+        <item>摩羯座</item>
+        <item>水瓶座</item>
+        <item>双鱼座</item>
+    </string-array>
 
+    <integer-array name="google_colors">
+        <item>@color/red500</item>
+        <item>@color/blue500</item>
+        <item>@color/yellow500</item>
+        <item>@color/green500</item>
+    </integer-array>
 </resources>

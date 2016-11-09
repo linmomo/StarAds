@@ -6,18 +6,22 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.View;
 
+import com.starwinwin.lib_stay_base.R;
+import com.starwinwin.lib_stay_base.dialog.WaitDialog;
 import com.starwinwin.lib_stay_base.utils.SPUtils;
 import com.starwinwin.lib_stay_base.utils.ToastUtil;
 
 /**
  * 基类片段
  */
-public abstract class BaseFragment extends Fragment implements IBaseView, View.OnClickListener{
+public abstract class BaseFragment extends Fragment implements IBaseView, View.OnClickListener {
 
     protected String TAG = getClass().getSimpleName();
-    public Activity mActivity;
-    public Context mContext;
+    protected Activity mActivity;
+    protected Context mContext;
     protected SPUtils spUtils;
+    private WaitDialog mWaitDialog;
+    private boolean mIsVisible;
 
     @Override
     public void onAttach(Context context) {
@@ -40,6 +44,19 @@ public abstract class BaseFragment extends Fragment implements IBaseView, View.O
         initData();
     }
 
+    @Override
+    public void onPause() {
+        mIsVisible = false;
+        hideProgress();
+        super.onPause();
+    }
+
+    @Override
+    public void onResume() {
+        mIsVisible = true;
+        super.onResume();
+    }
+
     //初始化控件
     public abstract View initViews(View view, Bundle savedInstanceState);
 
@@ -50,27 +67,41 @@ public abstract class BaseFragment extends Fragment implements IBaseView, View.O
 
     @Override
     public void showProgress(boolean flag, String message) {
-
+        if (mIsVisible) {
+            if (mWaitDialog == null) {
+                mWaitDialog = new WaitDialog(mContext, R.style.WaitDialog);
+            }
+            mWaitDialog.setMessage(message);
+            mWaitDialog.setCancelable(flag);
+            mWaitDialog.show();
+        }
     }
 
     @Override
     public void showProgress(String message) {
-
+        showProgress(true, message);
     }
 
     @Override
     public void showProgress() {
-
+        showProgress(true, getString(R.string.loading));
     }
 
     @Override
     public void showProgress(boolean flag) {
-
+        showProgress(flag, getString(R.string.loading));
     }
 
     @Override
     public void hideProgress() {
-
+        if (mIsVisible && mWaitDialog != null) {
+            try {
+                mWaitDialog.dismiss();
+                mWaitDialog = null;
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
     }
 
     @Override

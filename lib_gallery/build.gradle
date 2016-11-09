@@ -20,6 +20,8 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'cn.finalteam:toolsfinal:1.1.4'
     compile rootProject.ext.libSupportV4
+    compile 'cn.finalteam:toolsfinal:1.1.4'
+    compile 'me.shaohui.advancedluban:library:1.2.8'
+
 }
