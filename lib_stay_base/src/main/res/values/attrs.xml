@@ -49,4 +49,36 @@
         <attr name="gAutoRun" format="boolean" />
         <attr name="gProgressFloat" format="float" />
     </declare-styleable>
+    <!--TitleBar-->
+    <declare-styleable name="TitleBar">
+        <!-- 项目中把下面这五项定义在styles.xml里 -->
+        <attr name="titlebar_leftAndRightTextColor" format="reference|color" />
+        <attr name="titlebar_titleTextColor" format="reference|color" />
+        <attr name="titlebar_leftAndRightTextSize" format="reference|dimension" />
+        <attr name="titlebar_titleTextSize" format="reference|dimension" />
+        <attr name="titlebar_leftAndRightPadding" format="reference|dimension" />
+        <!-- 下面这几项更具每个页面的业务写在layout中 -->
+        <attr name="titlebar_leftText" format="reference|string" />
+        <attr name="titlebar_rightText" format="reference|string" />
+        <attr name="titlebar_titleText" format="reference|string" />
+        <attr name="titlebar_leftDrawable" format="reference" />
+        <attr name="titlebar_titleDrawable" format="reference" />
+        <attr name="titlebar_rightDrawable" format="reference" />
+        <!-- 当既有titleText，又有titleDrawable时，设置该属性 -->
+        <attr name="titlebar_titleDrawablePadding" format="reference|dimension" />
+        <!-- 当既有leftText，又有leftDrawable时，设置该属性 -->
+        <attr name="titlebar_leftDrawablePadding" format="reference|dimension" />
+        <!-- 当既有rightText，又有rightDrawable时，设置该属性 -->
+        <attr name="titlebar_rightDrawablePadding" format="reference|dimension" />
+        <!-- 下面三项通常情况下不用，使用默认值就好。某个界面标题特别长并且左右文字短或者左右文字特别长并且标题特别短时单独配置 -->
+        <attr name="titlebar_leftMaxWidth" format="reference|dimension" />
+        <attr name="titlebar_rightMaxWidth" format="reference|dimension" />
+        <attr name="titlebar_titleMaxWidth" format="reference|dimension" />
+        <!-- 标题文字是否为粗体，默认为false -->
+        <attr name="titlebar_isTitleTextBold" format="boolean" />
+        <!-- 左边文字是否为粗体，默认为false -->
+        <attr name="titlebar_isLeftTextBold" format="boolean" />
+        <!-- 右边文字是否为粗体，默认为false -->
+        <attr name="titlebar_isRightTextBold" format="boolean" />
+    </declare-styleable>
 </resources>

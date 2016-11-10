@@ -7,8 +7,6 @@
     tools:context="com.starwinwin.ui.MainActivity">
 
     <include
-        layout="@layout/include_title_bar"
-        android:id="@+id/title_bar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize" />
+         style="@style/TitleBar"
+        layout="@layout/include_titlebar" />
 </LinearLayout>

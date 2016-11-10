@@ -38,6 +38,7 @@ public abstract class BaseActivity extends AppCompatActivity implements IBaseVie
         this.mActivity = this;
         this.mContext = this;
         spUtils = new SPUtils(this);
+        initBeforeData();
     }
 
     @Override
@@ -49,19 +50,25 @@ public abstract class BaseActivity extends AppCompatActivity implements IBaseVie
                     WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
                     WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         }
-        setFitsSystemWindows(true);
         tintManager = new SystemBarTintManager(this);
-        setStatusColor(true);
+        setStatusBar(true, true, R.color.colorPrimaryDark);
         //视图可见，可显示弹框
         mIsVisible = true;
         initView();
-        initData();
+        setData();
+    }
+
+
+    /**
+     * 初始化数据，无关view，setContentView之前
+     */
+    protected void initBeforeData() {
     }
 
     /**
-     * 初始化页面数据,无关view, 可以不实现
+     * 设置数据
      */
-    protected void initData() {
+    protected void setData() {
     }
 
     /**
@@ -83,21 +90,20 @@ public abstract class BaseActivity extends AppCompatActivity implements IBaseVie
     }
 
     /**
-     * 设置根布局FitsSystemWindows
-     *
-     * @param isFit
+     * @param isFit       是否留出状态栏位置
+     * @param isTint      是否着色
+     * @param statusColor 状态栏颜色
      */
-    public void setFitsSystemWindows(boolean isFit) {
+    public void setStatusBar(boolean isFit, boolean isTint, int statusColor) {
         ViewGroup contentFrameLayout = (ViewGroup) findViewById(Window.ID_ANDROID_CONTENT);
         View parentView = contentFrameLayout.getChildAt(0);
         if (parentView != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             parentView.setFitsSystemWindows(isFit);
         }
-    }
-
-    public void setStatusColor(boolean isTint) {
-        tintManager.setStatusBarTintEnabled(isTint);
-        tintManager.setStatusBarTintResource(R.color.colorPrimaryDark);//状态背景色，可传drawable资源
+        if (tintManager != null) {
+            tintManager.setStatusBarTintEnabled(isTint);
+            tintManager.setStatusBarTintResource(statusColor);//状态背景色，可传drawable资源
+        }
     }
 
     @Override

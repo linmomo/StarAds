@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/StarAds.iml" filepath="$PROJECT_DIR$/StarAds.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BaseApp.iml" filepath="$PROJECT_DIR$/BaseApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib_data/lib_data.iml" filepath="$PROJECT_DIR$/lib_data/lib_data.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib_dialog/lib_dialog.iml" filepath="$PROJECT_DIR$/lib_dialog/lib_dialog.iml" />
