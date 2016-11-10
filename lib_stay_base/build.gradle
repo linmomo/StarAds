@@ -34,6 +34,7 @@ dependencies {
     compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.0@aar'
     compile 'com.flyco.roundview:FlycoRoundView_Lib:1.1.4@aar'
     compile 'com.nineoldandroids:library:2.4.0'
+    compile 'cn.qqtheme.framework:WheelPicker:1.2.4'
     compile 'pub.devrel:easypermissions:0.2.1'
     compile project(':lib_dialog')
     compile project(':lib_ptr')

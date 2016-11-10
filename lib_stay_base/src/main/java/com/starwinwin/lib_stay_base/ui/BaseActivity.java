@@ -27,6 +27,7 @@ public abstract class BaseActivity extends AppCompatActivity implements IBaseVie
     protected Activity mActivity;
     protected Context mContext;
     protected SPUtils spUtils;
+    private SystemBarTintManager tintManager;
     private WaitDialog mWaitDialog;
     private boolean mIsVisible;
 
@@ -42,21 +43,15 @@ public abstract class BaseActivity extends AppCompatActivity implements IBaseVie
     @Override
     public void setContentView(@LayoutRes int layoutResID) {
         super.setContentView(layoutResID);
-        //设置根布局FitsSystemWindows
-        ViewGroup contentFrameLayout = (ViewGroup) findViewById(Window.ID_ANDROID_CONTENT);
-        View parentView = contentFrameLayout.getChildAt(0);
-        if (parentView != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            parentView.setFitsSystemWindows(true);
-        }
-        // 状态栏沉浸，4.4+生效
+        // 透明状态栏，4.4+生效
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             getWindow().setFlags(
                     WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
                     WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         }
-        SystemBarTintManager tintManager = new SystemBarTintManager(this);
-        tintManager.setStatusBarTintEnabled(true);
-        tintManager.setStatusBarTintResource(R.color.colorPrimaryDark);//状态背景色，可传drawable资源
+        setFitsSystemWindows(true);
+        tintManager = new SystemBarTintManager(this);
+        setStatusColor(true);
         //视图可见，可显示弹框
         mIsVisible = true;
         initView();
@@ -85,6 +80,24 @@ public abstract class BaseActivity extends AppCompatActivity implements IBaseVie
     protected void onResume() {
         mIsVisible = true;
         super.onResume();
+    }
+
+    /**
+     * 设置根布局FitsSystemWindows
+     *
+     * @param isFit
+     */
+    public void setFitsSystemWindows(boolean isFit) {
+        ViewGroup contentFrameLayout = (ViewGroup) findViewById(Window.ID_ANDROID_CONTENT);
+        View parentView = contentFrameLayout.getChildAt(0);
+        if (parentView != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            parentView.setFitsSystemWindows(isFit);
+        }
+    }
+
+    public void setStatusColor(boolean isTint) {
+        tintManager.setStatusBarTintEnabled(isTint);
+        tintManager.setStatusBarTintResource(R.color.colorPrimaryDark);//状态背景色，可传drawable资源
     }
 
     @Override

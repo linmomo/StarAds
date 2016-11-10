@@ -64,6 +64,10 @@
         <item name="gLineStyle">circle</item>
         <item name="gAutoRun">true</item>
     </style>
+
+    <style name="text" parent="@style/TextAppearance.AppCompat.Display4">
+
+    </style>
     <!--WidgetTheme end-->
 
 
